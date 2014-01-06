@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('eugene-oz.button-indicator')
+angular.module('eugene-oz.button-indicator', [])
   .directive('jmButtonIndicator', function() {
                return {
                  templateUrl: 'jmButtonIndicator.html',
