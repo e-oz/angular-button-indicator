@@ -3,7 +3,7 @@
 angular.module('eugene-oz.button-indicator', [])
   .directive('jmButtonIndicator', function() {
                return {
-                 templateUrl: 'jmButtonIndicator.html',
+                 templateUrl: 'bower_components/angular-button-indicator/jmButtonIndicator.html',
                  restrict:    'ACE',
                  replace:     true,
                  scope:       {
