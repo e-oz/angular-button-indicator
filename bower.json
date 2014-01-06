@@ -1,0 +1,26 @@
+{
+  "name": "angular-button-indicator",
+  "version": "0.0.1",
+  "dependencies": {
+    "angular": ">= 1.2.0"
+  },
+  "authors": [
+    "Eugene OZ <normandiggs@gmail.com>"
+  ],
+  "description": "button with changing design on different statuses",
+  "main": "directive.js",
+  "keywords": [
+    "angular",
+    "button",
+    "status",
+    "indicator"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
