@@ -88,6 +88,9 @@ angular.module('eugene-oz.button-indicator', [])
                    attrs.classBusy = attrs.classBusy || 'btn-default';
                    attrs.classSuccess = attrs.classSuccess || 'btn-success';
                    attrs.classFailed = attrs.classFailed || 'btn-danger';
+                   attrs.iconBusy = attrs.iconBusy || 'fa fa-spinner fa-spin';
+                   attrs.iconSuccess = attrs.iconSuccess || 'glyphicon glyphicon-ok';
+                   attrs.iconFailed = attrs.iconFailed || 'glyphicon glyphicon-exclamation-sign';
                  }
                }
              });
