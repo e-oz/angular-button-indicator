@@ -1,12 +1,15 @@
 'use strict';
 
-angular.module('eugene-oz.button-indicator', [])
+angular.module('jm-button-indicator', [])
   .directive('jmButtonIndicator', function() {
                return {
-                 templateUrl: 'bower_components/angular-button-indicator/jmButtonIndicator.html',
-                 restrict:    'ACE',
-                 replace:     true,
-                 scope:       {
+                 template:   '<button ng-class="getClass()" ng-click="btnClick()" ng-disabled="btnDisabled">\
+                   {{getTitle()}}\
+                   <span ng-if="getIconClass()">&nbsp;<span ng-class="getIconClass()"></span></span>\
+                 </button>',
+                 restrict:   'ACE',
+                 replace:    true,
+                 scope:      {
                    classBtn:        '@',
                    classReady:      '@',
                    classBusy:       '@',
@@ -26,10 +29,10 @@ angular.module('eugene-oz.button-indicator', [])
                    failed:          '=btnFailed',
                    clickController: '&btnClick'
                  },
-                 link:        function postLink(scope, element, attrs) {
+                 link:       function postLink(scope, element, attrs) {
 
                  },
-                 controller:  function($scope) {
+                 controller: function($scope) {
                    $scope.getClass = function() {
                      if ($scope.busy) {
                        return $scope.classBtn + ' ' + $scope.classBusy;
@@ -82,7 +85,7 @@ angular.module('eugene-oz.button-indicator', [])
                      return $scope.clickController(event);
                    };
                  },
-                 compile:     function(element, attrs) {
+                 compile:    function(element, attrs) {
                    attrs.classBtn = attrs.classBtn || 'btn';
                    attrs.classReady = attrs.classReady || 'btn-primary';
                    attrs.classBusy = attrs.classBusy || 'btn-default';

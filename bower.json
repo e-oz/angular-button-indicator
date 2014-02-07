@@ -1,9 +1,6 @@
 {
   "name": "angular-button-indicator",
-  "version": "0.0.3",
-  "dependencies": {
-    "angular": ">= 1.2.0"
-  },
+  "version": "0.0.4",
   "authors": [
     "Eugene OZ <normandiggs@gmail.com>"
   ],
