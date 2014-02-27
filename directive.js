@@ -36,7 +36,7 @@ angular.module('jm-button-indicator', [])
       link: function postLink(scope, element, attrs) {
 
       },
-      controller: function ($scope) {
+      controller: function ($scope, $element, $attrs) {
         $scope.getClass = function () {
           if ($scope.busy) {
             return $scope.classBtn + ' ' + $scope.classBusy;
@@ -81,27 +81,30 @@ angular.module('jm-button-indicator', [])
             return false;
           }
           if ($scope.success) {
-            if (angular.isFunction($scope.clickSuccessController)) {
+            if ($attrs.successClick && angular.isFunction($scope.clickSuccessController)) {
               return $scope.clickSuccessController(event);
             }
             else {
               $scope.success = false;
+              return false;
             }
           }
           if ($scope.busy) {
-            if (angular.isFunction($scope.clickBusyController)) {
+            if ($attrs.busyClick && angular.isFunction($scope.clickBusyController)) {
               return $scope.clickBusyController(event);
             }
             else {
               $scope.busy = false;
+              return false;
             }
           }
           if ($scope.failed) {
-            if (angular.isFunction($scope.clickFailedController)) {
+            if ($attrs.failedClick && angular.isFunction($scope.clickFailedController)) {
               return $scope.clickFailedController(event);
             }
             else {
               $scope.failed = false;
+              return false;
             }
           }
 
